@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+
+int main() {
+    int testcases;
+    cin>>testcases;
+    while(testcases--)
+    {
+        long long n;
+        cin>>n;
+        int numberOfBits=1+floor(log2(n)); //finding number of bits
+        
+        if(numberOfBits%2!=0) //if bits are odd
+        {
+            n=n^(1<<(numberOfBits/2)); 
+        }
+        else //else if bits are even
+        {
+            n=n^(1<<(numberOfBits/2));
+            n=n^(1<<((numberOfBits/2)-1));
+        }
+        
+        cout<<n<<endl;
+        
+    }
+	return 0;
+}
